@@ -1,0 +1,7 @@
+.vagrant
+
+examples/roles/azavea.git
+examples/roles/azavea.pip
+examples/roles/azavea.mysql
+examples/roles/azavea.nginx
+examples/roles/azavea.php-fpm

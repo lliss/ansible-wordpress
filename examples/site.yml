@@ -1,0 +1,23 @@
+---
+- hosts: all
+  roles:
+    - role: "azavea.wordpress"
+
+      wordpress_site_env: "development"
+      wordpress_site_home: "http://localhost:8080"
+      wordpress_site_siteurl: "http://localhost:8080"
+      wordpress_site_local_dev: "true"
+
+      wordpress_site_db_name: "wordpress"
+      wordpress_site_db_user: "username"
+      wordpress_site_db_password: "password"
+      wordpress_site_db_host: "localhost"
+
+      wordpress_site_auth_key: "L~[G`||i|Oxdq|5v@+6D^%4!RY:=ilr$%?SBrVSx$6kp;+MGP}7|t[!ZROex,54y"
+      wordpress_site_secure_auth_key: "f*3{f//~|X-nW-|]/pxTRLijt7XW{S~;9~rT.`2|c?M)<h1zq25K><B!4_i_3kuU"
+      wordpress_site_logged_in_key: "zP~P(.oKtC|})OQd$A7*pgA&M%iXf{+:]P=u:%H.|v.~g<BxhLv -[O8#xi18}F:"
+      wordpress_site_nonce_key: "|iP7A-3A;GJ#RYJV2q:e|8Qr=5{ GTh/:cOy`jlg5rDex3h~5E1n:5E1v&1#t-mg"
+      wordpress_site_auth_salt: ":.H -h|9_J;C3u!UTD6J4mS+mOzT3;+K9@Zz.s|||SC r6YYcb+j7WlGf_%s>/.O"
+      wordpress_site_secure_auth_salt: "0X|L/bR.p+j4^N-h-J47{Ge0PhYeUjt)1^:zkm-^T(/S7@leXz|bD.X_4lA:u}AJ"
+      wordpress_site_logged_in_salt: "8X|=(W[;WL uk`#4cM3RfRMOh@oI-wA!t#->zQJk-kGn6ha-rN%-|$~:~hS8+oHM"
+      wordpress_site_nonce_salt: "AJX4%s3 7VFWx~&caoqkN^7eY-gYw`&)-d,Ff/}6;fIx{+K_2:lO=WASp3<$pIRg"
