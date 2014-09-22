@@ -27,3 +27,4 @@
 - name: Symlink current version into the web root
   file: src=/opt/wordpress-{{ wordpress_site_name }}-{{ wordpress_site_tag }}
         dest={{ wordpress_site_root }} state=link
+  when: wordpress_site_env != "development"
