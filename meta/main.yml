@@ -15,4 +15,4 @@ dependencies:
   - { role: "azavea.git" }
   - { role: "azavea.nginx", nginx_delete_default_site: True }
   - { role: "azavea.php-fpm" }
-  - { role: "azavea.mysql" }
+  - { role: "azavea.mysql", when: wordpress_site_env == "development" }
