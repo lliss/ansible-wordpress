@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  author: Hector Castro
+  description: An Ansible role for installing WordPress.
+  company: Azavea Inc.
+  license: Apache
+  min_ansible_version: 1.2
+  platforms:
+  - name: Ubuntu
+    versions:
+    - trusty
+  categories:
+  - web
+dependencies:
+  - { role: "azavea.git" }
+  - { role: "azavea.nginx", nginx_delete_default_site: True }
+  - { role: "azavea.php-fpm" }
+  - { role: "azavea.mysql" }

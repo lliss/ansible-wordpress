@@ -1,0 +1,36 @@
+---
+- include: mysql.yml
+- include: nginx.yml
+
+- name: Install WordPress dependencies
+  apt: pkg={{ item }} state=present
+  with_items:
+    - php5-mysql
+
+- name: Checkout WordPress site
+  git: repo={{ wordpress_site_repository }}
+       dest=/opt/wordpress-{{ wordpress_site_name }}-{{ wordpress_site_tag }}
+       depth={{ wordpress_site_repository_depth }}
+       version={{ wordpress_site_tag }}
+
+- name: Change WordPress permissions
+  file: path=/opt/wordpress-{{ wordpress_site_name }}-{{ wordpress_site_tag }}
+        owner=www-data
+        group=www-data
+        recurse=yes
+        state=directory
+
+- name: Create web root directory structure
+  file: path={{ wordpress_site_root | dirname }} state=directory
+
+- name: Symlink current version into the web root
+  file: src=/opt/wordpress-{{ wordpress_site_name }}-{{ wordpress_site_tag }}
+        dest={{ wordpress_site_root }} state=link
+
+- name: Set WordPress environmental variables
+  lineinfile: dest=/etc/environment
+              line='{{ item.name }}="{{ item.value }}"'
+              state=present
+  with_items: wordpress_env
+  notify:
+    - Restart PHP-FPM

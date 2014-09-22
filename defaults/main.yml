@@ -1,0 +1,47 @@
+---
+wordpress_site_name: "wordpress"
+wordpress_site_repository: "https://github.com/WordPress/WordPress.git"
+wordpress_site_repository_depth: 1
+wordpress_site_tag: "4.0"
+wordpress_site_root: "/var/www/html"
+
+wordpress_site_env: "development"
+wordpress_site_home: "http://localhost:8080"
+wordpress_site_siteurl: "http://localhost:8080"
+wordpress_site_local_dev: "true"
+
+wordpress_site_db_name: "wordpress"
+wordpress_site_db_user: "username"
+wordpress_site_db_password: "password"
+wordpress_site_db_host: "localhost"
+
+# For proposed values of these settings see:
+#
+#   https://api.wordpress.org/secret-key/1.1/salt/
+#
+wordpress_site_auth_key: ""
+wordpress_site_secure_auth_key: ""
+wordpress_site_logged_in_key: ""
+wordpress_site_nonce_key: ""
+wordpress_site_auth_salt: ""
+wordpress_site_secure_auth_salt: ""
+wordpress_site_logged_in_salt: ""
+wordpress_site_nonce_salt: ""
+
+wordpress_env:
+  - { name: "WP_ENV", value: "{{ wordpress_site_env }}" }
+  - { name: "WP_HOME", value: "{{ wordpress_site_home }}" }
+  - { name: "WP_SITEURL", value: "{{ wordpress_site_siteurl }}" }
+  - { name: "WP_LOCAL_DEV", value: "{{ wordpress_site_local_dev }}" }
+  - { name: "WP_DB_NAME", value: "{{ wordpress_site_db_name }}" }
+  - { name: "WP_DB_USER", value: "{{ wordpress_site_db_user }}" }
+  - { name: "WP_DB_PASSWORD", value: "{{ wordpress_site_db_password }}" }
+  - { name: "WP_DB_HOST", value: "{{ wordpress_site_db_host }}" }
+  - { name: "WP_AUTH_KEY", value: "{{ wordpress_site_auth_key }}" }
+  - { name: "WP_SECURE_AUTH_KEY", value: "{{ wordpress_site_secure_auth_key }}" }
+  - { name: "WP_LOGGED_IN_KEY", value: "{{ wordpress_site_logged_in_key }}" }
+  - { name: "WP_NONCE_KEY", value: "{{ wordpress_site_nonce_key }}" }
+  - { name: "WP_AUTH_SALT", value: "{{ wordpress_site_auth_salt }}" }
+  - { name: "WP_SECURE_AUTH_SALT", value: "{{ wordpress_site_secure_auth_salt }}" }
+  - { name: "WP_LOGGED_IN_SALT", value: "{{ wordpress_site_logged_in_salt }}" }
+  - { name: "WP_NONCE_SALT", value: "{{ wordpress_site_nonce_salt }}" }

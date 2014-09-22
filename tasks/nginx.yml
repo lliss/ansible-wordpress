@@ -1,0 +1,12 @@
+---
+- name: Configure WordPress site
+  template: src=wordpress.conf.j2 dest=/etc/nginx/sites-available/wordpress.conf
+  notify:
+    - Restart Nginx
+
+- name: Enable WordPress site
+  file: src=/etc/nginx/sites-available/wordpress.conf
+        dest=/etc/nginx/sites-enabled/wordpress
+        state=link
+  notify:
+    - Restart Nginx

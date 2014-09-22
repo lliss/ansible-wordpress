@@ -1,0 +1,4 @@
+azavea.git,0.1.0
+azavea.nginx,0.1.0
+azavea.php-fpm,0.1.0
+azavea.mysql,0.1.0
