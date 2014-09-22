@@ -49,23 +49,7 @@ define('DB_HOST', getenv('WP_DB_HOST'));
 `wordpress_env` maps most of the defaults that are necessary for a base `wp-config.php`, but it is also necessary to whitelist the same environmental variables in PHP-FPM:
 
 ```yaml
-php_fpm_env:
-  - { name: "WP_ENV", value: "$WP_ENV" }
-  - { name: "WP_HOME", value: "$WP_HOME" }
-  - { name: "WP_SITEURL", value: "$WP_SITEURL" }
-  - { name: "WP_LOCAL_DEV", value: "$WP_LOCAL_DEV" }
-  - { name: "WP_DB_NAME", value: "$WP_DB_NAME" }
-  - { name: "WP_DB_USER", value: "$WP_DB_USER" }
-  - { name: "WP_DB_PASSWORD", value: "$WP_DB_PASSWORD" }
-  - { name: "WP_DB_HOST", value: "$WP_DB_HOST" }
-  - { name: "WP_AUTH_KEY", value: "$WP_AUTH_KEY" }
-  - { name: "WP_SECURE_AUTH_KEY", value: "$WP_SECURE_AUTH_KEY" }
-  - { name: "WP_LOGGED_IN_KEY", value: "$WP_LOGGED_IN_KEY" }
-  - { name: "WP_NONCE_KEY", value: "$WP_NONCE_KEY" }
-  - { name: "WP_AUTH_SALT", value: "$WP_AUTH_SALT" }
-  - { name: "WP_SECURE_AUTH_SALT", value: "$WP_SECURE_AUTH_SALT" }
-  - { name: "WP_LOGGED_IN_SALT", value: "$WP_LOGGED_IN_SALT" }
-  - { name: "WP_NONCE_SALT", value: "$WP_NONCE_SALT" }
+php_fpm_env: "{{ wordpress_env }}"
 ```
 
 In addition, if `wordpress_site_env` is set to anything other than `development`, the the local MySQL installation will be skipped.
