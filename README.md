@@ -32,9 +32,18 @@ An Ansible role for installing WordPress.
 It is important to note that this role expects the underlying `wp-config.php` file to pull settings from the environment (using `getenv()`):
 
 ```php
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
 define('DB_NAME', getenv('WP_DB_NAME'));
+
+/** MySQL database username */
 define('DB_USER', getenv('WP_DB_USER'));
+
+/** MySQL database password */
 define('DB_PASSWORD', getenv('WP_DB_PASSWORD'));
+
+/** MySQL hostname */
+define('DB_HOST', getenv('WP_DB_HOST'));
 ```
 
 `wordpress_env` maps most of the defaults that are necessary for a base `wp-config.php`, but it is also necessary to whitelist the same environmental variables in PHP-FPM:
@@ -58,5 +67,7 @@ php_fpm_env:
   - { name: "WP_LOGGED_IN_SALT", value: "$WP_LOGGED_IN_SALT" }
   - { name: "WP_NONCE_SALT", value: "$WP_NONCE_SALT" }
 ```
+
+In addition, if `wordpress_site_env` is set to anything other than `development`, the the local MySQL installation will be skipped.
 
 See the [examples](./examples/) directory for more details.

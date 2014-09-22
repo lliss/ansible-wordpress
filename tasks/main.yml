@@ -1,5 +1,6 @@
 ---
 - include: mysql.yml
+  when: wordpress_site_env == "development"
 - include: nginx.yml
 
 - name: Install WordPress dependencies
