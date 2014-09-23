@@ -27,11 +27,3 @@
 - name: Symlink current version into the web root
   file: src=/opt/wordpress-{{ wordpress_site_name }}-{{ wordpress_site_tag }}
         dest={{ wordpress_site_root }} state=link
-
-- name: Set WordPress environmental variables
-  lineinfile: dest=/etc/environment
-              line='{{ item.name }}="{{ item.value }}"'
-              state=present
-  with_items: wordpress_env
-  notify:
-    - Restart PHP-FPM
