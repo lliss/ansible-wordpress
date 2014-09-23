@@ -7,6 +7,7 @@ An Ansible role for installing WordPress.
 - `wordpress_site_name` - An Nginx site name for the WordPress configuration
 - `wordpress_site_repository` - A Git repository for a WordPress installation
 - `wordpress_site_repository_depth` - A depth for creating a shallow clone of the repository (helpful for larger repositories, default: `1`)
+- `wordpress_site_repository_accept_hostkey` - Adds the host key for a repository if it isn't already present (default: `no`)
 - `wordpress_site_tag` - A Git tag to checkout after the repository is cloned
 - `wordpress_site_root` - An Nginx site root for the WordPress installation
 - `wordpress_site_env` - What environment the installation will be running in (default: `development`)
