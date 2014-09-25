@@ -1,7 +1,9 @@
 ---
 wordpress_site_name: "wordpress"
 wordpress_site_repository: "https://github.com/WordPress/WordPress.git"
+wordpress_site_repository_path: "/"
 wordpress_site_repository_depth: 1
+wordpress_site_repository_accept_hostkey: no
 wordpress_site_tag: "4.0"
 wordpress_site_root: "/var/www/html"
 
