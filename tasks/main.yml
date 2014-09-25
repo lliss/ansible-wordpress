@@ -26,6 +26,6 @@
   file: path={{ wordpress_site_root | dirname }} state=directory
 
 - name: Symlink current version into the web root
-  file: src=/opt/wordpress-{{ wordpress_site_name }}-{{ wordpress_site_tag }}
+  file: src=/opt/wordpress-{{ wordpress_site_name }}-{{ wordpress_site_tag }}{{ wordpress_site_repository_path }}
         dest={{ wordpress_site_root }} state=link
   when: wordpress_site_env != "development"
