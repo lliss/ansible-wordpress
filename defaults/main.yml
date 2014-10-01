@@ -1,6 +1,7 @@
 ---
 wordpress_site_name: "wordpress"
 wordpress_site_repository: "https://github.com/WordPress/WordPress.git"
+wordpress_site_repository_directory: "/opt/wordpress-{{ wordpress_site_name }}-{{ wordpress_site_tag }}"
 wordpress_site_repository_path: "/"
 wordpress_site_repository_depth: 1
 wordpress_site_repository_accept_hostkey: no
