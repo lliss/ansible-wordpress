@@ -1,3 +1,7 @@
+## 0.3.0
+
+- Add configurable repository clone directory (`wordpress_site_repository_directory`).
+
 ## 0.2.0
 
 - Make WordPress installation symlink conditional based on `wordpress_site_env`.
